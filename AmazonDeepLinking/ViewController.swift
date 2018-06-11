@@ -12,14 +12,24 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+       
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+   
+    @IBAction func buyInAmazonBtnAction(_ sender: Any) {
+        
+       
+        let urlStringForAmazonApp = "com.amazon.mobile.shopping://www.amazon.com/products/B00KWFCV32/"
+        
+        guard let amazonURL = URL(string: urlStringForAmazonApp) else { return }
+        
+        UIApplication.shared.open(amazonURL, options: [:]) { (completed) in }
+        
+        
+        
+        
     }
-
-
+    
+    
 }
 
